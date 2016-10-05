@@ -30,7 +30,29 @@ scrumPoker.controller("loginCtrl", function($scope, $state, $timeout, $firebaseA
     console.log("User is logged out");
     $state.go('login');
   };
-  
+
+  //This is called when a user clicks the 'Sign Up' button
+  $scope.register = function(email, password, displayName, photoURL){
+
+    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(error);
+
+    });
+
+    // [END authwithemail]
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        $state.go('tab.dash');
+      };
+    });
+
+  };
+
+  // This is called when a user clicks the 'Login' button
   $scope.login = function(email, password){
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
       // Handle Errors here.
