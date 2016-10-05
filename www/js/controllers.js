@@ -1,4 +1,4 @@
-var scrumPoker = angular.module('starter.controllers', [])
+var scrumPoker = angular.module('scrumPoker.controllers', [])
 
   // Initialize Firebase
   var config = {
@@ -107,25 +107,6 @@ scrumPoker.controller('DashCtrl', function($scope, Cards) {
 
 scrumPoker.controller('DashDetailCtrl', function($scope, $stateParams, Cards) {
   $scope.card = Cards.get($stateParams.cardId);
-});
-
-scrumPoker.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
-});
-
-scrumPoker.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
 });
 
 scrumPoker.controller('AccountCtrl', function($scope) {
