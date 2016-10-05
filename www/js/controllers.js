@@ -98,7 +98,7 @@ scrumPoker.controller('DashDetailCtrl', function($scope, $stateParams, Cards) {
   $scope.card = Cards.get($stateParams.cardId);
 });
 
-scrumPoker.controller('AccountCtrl', function($scope) {
+scrumPoker.controller('AccountCtrl', function($scope, $state) {
   //Logout Functionality
   $scope.logout = function() {
     firebase.auth().signOut().then(function() {
