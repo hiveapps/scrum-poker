@@ -84,17 +84,6 @@ scrumPoker.controller("loginCtrl", function($scope, $state, $timeout, $firebaseA
     $scope.authData = authData; // This will display the user's name in our view
   });
 });*/
-
-  //Logout Functionality
-  $scope.logout = function() {
-    firebase.auth().signOut().then(function() {
-      // Sign-out successful.
-    }, function(error) {
-      // An error happened.
-    });
-    $state.go('login');
-    console.log("User has been logged out");
-  };
   
 });
 
@@ -110,7 +99,14 @@ scrumPoker.controller('DashDetailCtrl', function($scope, $stateParams, Cards) {
 });
 
 scrumPoker.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
+  //Logout Functionality
+  $scope.logout = function() {
+    firebase.auth().signOut().then(function() {
+      // Sign-out successful.
+    }, function(error) {
+      // An error happened.
+    });
+    $state.go('login');
+    console.log("User has been logged out");
   };
 });
