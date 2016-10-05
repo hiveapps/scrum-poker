@@ -103,10 +103,11 @@ scrumPoker.controller('AccountCtrl', function($scope) {
   $scope.logout = function() {
     firebase.auth().signOut().then(function() {
       // Sign-out successful.
+      $state.go('login');
+      console.log("User has been logged out");
     }, function(error) {
       // An error happened.
+      console.log(error);
     });
-    $state.go('login');
-    console.log("User has been logged out");
   };
 });
