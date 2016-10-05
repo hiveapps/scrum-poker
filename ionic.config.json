@@ -1,4 +1,12 @@
 {
   "name": "ScrumPoker",
-  "app_id": "caa84797"
+  "app_id": "caa84797",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
 }
