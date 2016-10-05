@@ -98,7 +98,16 @@ scrumPoker.controller("loginCtrl", function($scope, $state, $timeout, $firebaseA
   
 });
 
-scrumPoker.controller('DashCtrl', function($scope) {});
+scrumPoker.controller('DashCtrl', function($scope, Cards) {
+  $scope.cards = Cards.all();
+  $scope.remove = function(card) {
+    Cards.remove(card);
+  };
+});
+
+scrumPoker.controller('DashDetailCtrl', function($scope, $stateParams, Cards) {
+  $scope.card = Cards.get($stateParams.cardId);
+});
 
 scrumPoker.controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called

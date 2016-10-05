@@ -1,8 +1,14 @@
 <ion-view view-title="Scrum Board">
   <ion-content class="padding" style="background-color: #000">
     <h2 style="color: #fff;">Welcome to Scrum Poker</h2>
-    
-    <!-- Beginning Row 1 -->
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="card in cards" type="item-text-wrap" href="#/tab/cards/{{card.id}}">
+        <h2>{{card.name}}</h2>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+      </ion-item>
+    </ion-list>
+    <!-- Beginning Row 1 --
     <div class="row">
       
       <div class="col">
@@ -41,7 +47,7 @@
     <!-- End of Row 1 -->
 
 
-    <!-- Beginning Row 2 -->
+    <!-- Beginning Row 2 --
     <div class="row">
       
       <div class="col">
@@ -79,7 +85,7 @@
     </div>
     <!-- End of Row 2 -->
 
-    <!-- Beginning Row 3 -->
+    <!-- Beginning Row 3 --
     <div class="row">
       
       <div class="col">
@@ -117,7 +123,7 @@
     </div>
     <!-- End of Row 3 -->
 
-    <!-- Beginning Row 4 -->
+    <!-- Beginning Row 4 --
     <div class="row">
       
       <div class="col">
